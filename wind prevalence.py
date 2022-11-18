@@ -5,9 +5,9 @@ import math
 
 df_direction = pd.read_csv('hourly wind direction.csv')
 df_speed = pd.read_csv('daily wind speed.csv')
-df_ozone = pd.read_csv('nitric oxide.csv')
+df_ozone = pd.read_csv('emissions.csv')
 df_wells = pd.read_excel('fracking wells.xlsx')
-df_sites = pd.read_excel(r'C:/Users/elton/projects/prevalence sites no.xlsx')
+df_sites = pd.read_excel(r'prevalence sites.xlsx')
 
 wb = load_workbook('template.xlsx')
 sheet = wb.active
@@ -476,4 +476,4 @@ for row in range(1, len(df_ozone)):
         [prevalence, df_ozone.loc[row, 'Arithmetic Mean'], df_ozone.loc[row, '1st Max Value'], wind_prevalence, overall,
          name])
 
-wb.save('wind and nitric oxide 2.xlsx')
+wb.save('wind prevalence.xlsx')
