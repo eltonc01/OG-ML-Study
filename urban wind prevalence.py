@@ -3,19 +3,20 @@ from openpyxl import load_workbook
 from modules import wind_direction, city_wind_strength, well_activity_center
 import geopy.distance
 
-df_direction = pd.read_csv(r'C:\Users\elton\projects\hourly wind direction.csv')
-df_speed = pd.read_csv(r'C:\Users\elton\projects\daily wind speed.csv')
-df_ozone = pd.read_csv(r'C:\Users\elton\projects\nox.csv')
-df_wells = pd.read_excel(r'C:\Users\elton\projects\fracking wells.xlsx')
-df_sites = pd.read_excel(r'C:\Users\elton\projects\prevalence sites no2.xlsx')
-df_cities = pd.read_csv(r'C:\Users\elton\projects\co city data.csv')
+df_direction = pd.read_csv(r'hourly wind direction.csv')
+df_speed = pd.read_csv(r'daily wind speed.csv')
+df_ozone = pd.read_csv(r'nox.csv')
+df_wells = pd.read_excel(r'fracking wells.xlsx')
+df_sites = pd.read_excel(r'prevalence sites no2.xlsx')
+df_cities = pd.read_csv(r'co city data.csv')
 
-wb = load_workbook(r'C:\Users\elton\projects\template.xlsx')
+wb = load_workbook(r'template.xlsx')
 sheet = wb.active
 
-june = '2021-06'
-july = '2021-07'
-aug = '2021-08'
+# To specify dates of emission measurement:
+# june = '2021-06'
+# july = '2021-07'
+# aug = '2021-08'
 
 old_lat = df_ozone.loc[0, 'Latitude']
 
@@ -253,4 +254,4 @@ for row in range(1, len(df_ozone)):
     print(f'{overall}: {mean}')
     sheet.append([prevalence, mean, mean2, maximum, maximum2, wind_prevalence, overall, city_prevalence, total, z, name])
 
-wb.save(r'C:\Users\elton\projects\wind and ozone summer.xlsx')
+wb.save(r'wind and emissions.xlsx')
