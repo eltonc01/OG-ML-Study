@@ -1,13 +1,9 @@
 import pandas as pd
 import geopy.distance
 
-df_wells = pd.read_excel(r'C:\Users\elton\projects\fracking wells.xlsx')
-df_sites = pd.read_excel(r'C:\Users\elton\projects\prevalence sites original.xlsx')
-df_cities = pd.read_csv(r'C:\Users\elton\projects\co city data.csv')
-
-'''for i in range(0, 2):
-    nlist = float(input(f"Coordinate {i + 1}: "))
-    location.append(nlist)'''
+df_wells = pd.read_excel(r'fracking wells.xlsx')
+df_sites = pd.read_excel(r'prevalence sites.xlsx')
+df_cities = pd.read_csv(r'co city data.csv')
 
 a = 0.8
 b = 2
@@ -130,5 +126,5 @@ for site_row in range(0, len(df_sites)):
     print(prevalence)
     df_sites.at[site_row, 'City Prevalence'] = prevalence
 
-df_sites.to_excel(r'C:\Users\elton\projects\prevalence sites original.xlsx')
-df_cities.to_csv(r'C:\Users\elton\projects\co city data.csv')
+df_sites.to_excel(r'prevalence sites.xlsx')
+df_cities.to_csv(r'co city data.csv')
