@@ -3,6 +3,8 @@ from openpyxl import load_workbook
 from modules import wind_direction, city_wind_strength, well_activity_center
 import geopy.distance
 
+# full code to calculate locational, wind, and city prevalences.
+
 df_direction = pd.read_csv(r'hourly wind direction.csv')
 df_speed = pd.read_csv(r'daily wind speed.csv')
 df_ozone = pd.read_csv(r'nox.csv')
