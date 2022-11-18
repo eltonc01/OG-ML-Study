@@ -5,14 +5,14 @@ import math
 from shapely.geometry.point import Point
 import numpy
 
-df_direction = pd.read_csv(r'C:\Users\elton\projects\hourly wind direction.csv')
-df_speed = pd.read_csv(r'C:\Users\elton\projects\daily wind speed.csv')
-df_ozone = pd.read_csv(r'C:\Users\elton\projects\no2.csv')
-df_wells = pd.read_excel(r'C:\Users\elton\projects\fracking wells.xlsx')
-df_sites = pd.read_excel(r'C:\Users\elton\projects\prevalence sites original.xlsx')
-df_cities = pd.read_csv(r'C:\Users\elton\projects\co city data.csv')
+df_direction = pd.read_csv(r'hourly wind direction.csv')
+df_speed = pd.read_csv(r'daily wind speed.csv')
+df_ozone = pd.read_csv(r'emission.csv')
+df_wells = pd.read_excel(r'fracking wells.xlsx')
+df_sites = pd.read_excel(r'prevalence sites.xlsx')
+df_cities = pd.read_csv(r'co city data.csv')
 
-wb = load_workbook(r'C:\Users\elton\projects\template.xlsx')
+wb = load_workbook(r'template.xlsx')
 sheet = wb.active
 
 
